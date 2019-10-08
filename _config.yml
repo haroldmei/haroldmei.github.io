@@ -47,6 +47,16 @@ minima:
 # Build settings
 theme: minima
 
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
