@@ -2,6 +2,7 @@
 layout: post
 title: "This post demonstrates post content styles"
 categories: junk
+tags: learn
 author:
 - Bart Simpson
 - Nelson Mandela Muntz
