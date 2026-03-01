@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haiyuan Mei</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .hero {
+      text-align: center;
+      max-width: 700px;
+    }
+    .avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; margin: 0 auto 1.5rem;
+    }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+    .tag {
+      background: #1e293b; border: 1px solid #334155;
+      padding: 0.3rem 0.8rem; border-radius: 999px;
+      font-size: 0.85rem; color: #94a3b8;
+    }
+    .cards { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .card {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 12px; padding: 1.5rem; width: 180px;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: #6366f1; transform: translateY(-3px); }
+    .card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .card p { font-size: 0.8rem; color: #64748b; }
+    footer { margin-top: 3rem; color: #475569; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="avatar">HM</div>
+    <h1>Haiyuan Mei</h1>
+    <p class="subtitle">Staff ML Engineer · AI/MLOps · GCP</p>
+    <div class="tags">
+      <span class="tag">Machine Learning</span>
+      <span class="tag">LLM</span>
+      <span class="tag">MLOps</span>
+      <span class="tag">GCP</span>
+      <span class="tag">Python</span>
+    </div>
+    <div class="cards">
+      <a href="/site1" class="card">
+        <div class="card-icon">🤖</div>
+        <h3>ML Projects</h3>
+        <p>Models, pipelines &amp; experiments</p>
+      </a>
+      <a href="/site2" class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>MLOps &amp; Infra</h3>
+        <p>Platforms, tooling &amp; automation</p>
+      </a>
+      <a href="/site3" class="card">
+        <div class="card-icon">📝</div>
+        <h3>Blog &amp; Notes</h3>
+        <p>Writings on AI and engineering</p>
+      </a>
+    </div>
+  </div>
+  <footer>haroldmei.github.io · Haiyuan Mei</footer>
+</body>
+</html>

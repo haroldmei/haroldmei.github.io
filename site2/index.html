@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLOps &amp; Infra · Haiyuan Mei</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    nav { display: flex; gap: 1rem; margin-bottom: 3rem; align-items: center; }
+    nav a { color: #06b6d4; text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { text-decoration: underline; }
+    .sep { color: #334155; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #64748b; margin-bottom: 2.5rem; }
+    .timeline { max-width: 700px; position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: #1e293b;
+    }
+    .item { position: relative; margin-bottom: 2rem; }
+    .item::before {
+      content: ''; position: absolute; left: -2.4rem; top: 0.4rem;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #06b6d4; border: 2px solid #0f172a;
+    }
+    .item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .item .meta { font-size: 0.8rem; color: #06b6d4; margin-bottom: 0.5rem; }
+    .item p { font-size: 0.875rem; color: #94a3b8; line-height: 1.6; }
+    .stack { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .chip {
+      background: #1e293b; border: 1px solid #334155;
+      font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 999px; color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span>MLOps &amp; Infra</span>
+  </nav>
+  <h1>⚙️ MLOps &amp; Infrastructure</h1>
+  <p class="subtitle">Platforms, tooling, and automation for reliable ML systems at scale.</p>
+  <div class="timeline">
+    <div class="item">
+      <h3>MLOps PoC Platform</h3>
+      <div class="meta">Proof-of-concept · GCP</div>
+      <p>End-to-end MLOps reference architecture: feature store, model registry, A/B serving, monitoring and automated retraining pipelines on GCP.</p>
+      <div class="stack">
+        <span class="chip">Vertex AI</span><span class="chip">Kubeflow</span><span class="chip">GCP</span><span class="chip">Terraform</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>LLM Orchestrator</h3>
+      <div class="meta">Production system · Multi-cloud</div>
+      <p>Multi-agent orchestration layer for routing, caching, rate-limiting and observability across multiple LLM providers.</p>
+      <div class="stack">
+        <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Redis</span><span class="chip">OpenTelemetry</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Agent App (AWS)</h3>
+      <div class="meta">SaaS · AWS</div>
+      <p>Serverless agentic application framework deployed on AWS Lambda with Step Functions for long-running workflows.</p>
+      <div class="stack">
+        <span class="chip">AWS Lambda</span><span class="chip">Step Functions</span><span class="chip">CDK</span>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Daily Job Scraper</h3>
+      <div class="meta">Automation · GitHub Actions</div>
+      <p>FAANG job scraper running on GitHub Actions using LLM-powered matching against resume to surface relevant roles daily.</p>
+      <div class="stack">
+        <span class="chip">Python</span><span class="chip">GitHub Actions</span><span class="chip">Claude API</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

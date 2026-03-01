@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog &amp; Notes · Haiyuan Mei</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    nav { display: flex; gap: 1rem; margin-bottom: 3rem; align-items: center; }
+    nav a { color: #a78bfa; text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { text-decoration: underline; }
+    .sep { color: #334155; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #64748b; margin-bottom: 2.5rem; }
+    .posts { max-width: 700px; display: flex; flex-direction: column; gap: 1.5rem; }
+    .post {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 12px; padding: 1.5rem;
+      transition: border-color 0.2s;
+      cursor: default;
+    }
+    .post:hover { border-color: #a78bfa; }
+    .post-meta { font-size: 0.78rem; color: #a78bfa; margin-bottom: 0.4rem; }
+    .post h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .post p { font-size: 0.875rem; color: #94a3b8; line-height: 1.6; }
+    .tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tag {
+      background: #0f172a; border: 1px solid #334155;
+      font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 999px; color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span>Blog &amp; Notes</span>
+  </nav>
+  <h1>📝 Blog &amp; Notes</h1>
+  <p class="subtitle">Writings on machine learning, MLOps, and software engineering.</p>
+  <div class="posts">
+    <div class="post">
+      <div class="post-meta">Feb 2026 · 8 min read</div>
+      <h3>LoRA vs Full Fine-Tuning: When to Use Each</h3>
+      <p>A practical comparison of full fine-tuning and LoRA/QLoRA adapter training, covering memory footprints, convergence behaviour, and production trade-offs for 7B–70B models.</p>
+      <div class="tag-row">
+        <span class="tag">LLM</span><span class="tag">LoRA</span><span class="tag">Fine-Tuning</span>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-meta">Jan 2026 · 6 min read</div>
+      <h3>Building a Multi-Agent Orchestrator from Scratch</h3>
+      <p>How I designed a lightweight orchestration layer that routes requests across multiple LLM providers, with built-in caching, fallback, and cost tracking.</p>
+      <div class="tag-row">
+        <span class="tag">Agents</span><span class="tag">LLM</span><span class="tag">Architecture</span>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-meta">Dec 2025 · 10 min read</div>
+      <h3>MLOps on GCP: A Reference Architecture</h3>
+      <p>Walking through the MLOps PoC I built on GCP — from feature engineering with BigQuery to automated retraining and canary deployments on Vertex AI.</p>
+      <div class="tag-row">
+        <span class="tag">MLOps</span><span class="tag">GCP</span><span class="tag">Vertex AI</span>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-meta">Nov 2025 · 5 min read</div>
+      <h3>Knowledge Distillation: Compressing LLMs for Production</h3>
+      <p>Lessons learned compressing a 13B teacher model into a 1.3B student with competitive accuracy — techniques, pitfalls, and evaluation strategies.</p>
+      <div class="tag-row">
+        <span class="tag">Distillation</span><span class="tag">LLM</span><span class="tag">Inference</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

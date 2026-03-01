@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Projects · Haiyuan Mei</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    nav { display: flex; gap: 1rem; margin-bottom: 3rem; align-items: center; }
+    nav a { color: #6366f1; text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { text-decoration: underline; }
+    .sep { color: #334155; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #64748b; margin-bottom: 2.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 960px; }
+    .card {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .card-header span { font-size: 1.5rem; }
+    .card h3 { font-size: 1.05rem; font-weight: 600; }
+    .card p { font-size: 0.875rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1rem; }
+    .badge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .badge {
+      background: #0f172a; border: 1px solid #334155;
+      font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 999px; color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span>ML Projects</span>
+  </nav>
+  <h1>🤖 ML Projects</h1>
+  <p class="subtitle">Selected machine learning models, pipelines, and experiments.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="card-header"><span>🧠</span><h3>LLM Fine-Tuner</h3></div>
+      <p>End-to-end pipeline for supervised fine-tuning of large language models using LoRA/QLoRA adapters on custom datasets.</p>
+      <div class="badge-row">
+        <span class="badge">Python</span><span class="badge">HuggingFace</span><span class="badge">LoRA</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span>📈</span><h3>Stock Prediction Models</h3></div>
+      <p>Time-series forecasting with LSTM and Transformer architectures for equity price prediction and signal generation.</p>
+      <div class="badge-row">
+        <span class="badge">PyTorch</span><span class="badge">LSTM</span><span class="badge">Finance</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span>🗜️</span><h3>LLM Distiller</h3></div>
+      <p>Knowledge distillation framework to compress large teacher models into smaller, production-ready student models.</p>
+      <div class="badge-row">
+        <span class="badge">Distillation</span><span class="badge">ONNX</span><span class="badge">Python</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span>🎬</span><h3>Video Mixer</h3></div>
+      <p>Computer vision pipeline for video understanding, scene segmentation and multi-stream video composition.</p>
+      <div class="badge-row">
+        <span class="badge">OpenCV</span><span class="badge">FFmpeg</span><span class="badge">PyTorch</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
