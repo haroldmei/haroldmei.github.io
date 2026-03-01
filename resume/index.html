@@ -11,16 +11,51 @@
       background: #0f172a;
       color: #e2e8f0;
       min-height: 100vh;
-      padding: 2rem 1rem 4rem;
+      padding: 0 1rem 4rem;
     }
     a { color: #818cf8; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    nav { display: flex; gap: 1rem; margin-bottom: 2.5rem; align-items: center; max-width: 800px; margin-left: auto; margin-right: auto; }
-    nav a { color: #6366f1; font-size: 0.9rem; }
-    .sep { color: #334155; }
+    /* Sticky topbar */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+      padding: 0 1rem;
+    }
+    .topbar-inner {
+      max-width: 800px; margin: 0 auto;
+      display: flex; align-items: center;
+      height: 56px; gap: 0;
+    }
+    .topbar-brand {
+      font-weight: 700; font-size: 1rem; color: #e2e8f0;
+      margin-right: auto; white-space: nowrap;
+    }
+    .topbar-brand span { color: #6366f1; }
+    .topbar-links {
+      display: flex; align-items: center; gap: 0.25rem;
+    }
+    .topbar-links a {
+      color: #94a3b8; font-size: 0.85rem; font-weight: 500;
+      padding: 0.35rem 0.75rem; border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .topbar-links a:hover, .topbar-links a.active {
+      background: #1e293b; color: #e2e8f0; text-decoration: none;
+    }
+    .topbar-divider { width: 1px; height: 20px; background: #1e293b; margin: 0 0.5rem; }
+    .topbar-print {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: #6366f1; color: #fff; font-size: 0.8rem; font-weight: 600;
+      padding: 0.35rem 0.85rem; border-radius: 6px; border: none;
+      cursor: pointer; transition: background 0.15s; white-space: nowrap;
+    }
+    .topbar-print:hover { background: #4f46e5; }
 
-    .page { max-width: 800px; margin: 0 auto; }
+    .page { max-width: 800px; margin: 0 auto; padding-top: 2rem; }
 
     /* Header */
     .resume-header {
@@ -135,7 +170,7 @@
 
     @media print {
       body { background: #fff; color: #111; padding: 1rem; }
-      nav, .print-btn { display: none; }
+      .topbar { display: none; }
       .resume-header, .job, .project, .edu-item {
         background: #fff; border: 1px solid #ddd; box-shadow: none;
       }
@@ -150,14 +185,24 @@
   </style>
 </head>
 <body>
-  <nav class="page">
-    <a href="/">Home</a>
-    <span class="sep">/</span>
-    <span>Resume</span>
-  </nav>
+
+  <!-- Sticky menu -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">Haiyuan <span>Mei</span></div>
+      <nav class="topbar-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <div class="topbar-divider"></div>
+        <a href="/">Home</a>
+        <div class="topbar-divider"></div>
+        <button class="topbar-print" onclick="window.print()">⎙ PDF</button>
+      </nav>
+    </div>
+  </header>
 
   <div class="page">
-    <button class="print-btn" onclick="window.print()">⎙ Print / Save as PDF</button>
 
     <!-- Header -->
     <div class="resume-header">
@@ -173,7 +218,7 @@
     </div>
 
     <!-- Experience -->
-    <section>
+    <section id="experience">
       <div class="section-title">Experience</div>
       <div class="timeline">
 
@@ -341,7 +386,7 @@
     </section>
 
     <!-- Projects -->
-    <section>
+    <section id="projects">
       <div class="section-title">Projects</div>
       <div class="project">
         <h3>Stanford AI Graduate Certificate &nbsp;<span style="font-weight:400;color:#475569;font-size:0.8rem">Dec 2018 – Nov 2020</span></h3>
@@ -358,7 +403,7 @@
     </section>
 
     <!-- Education -->
-    <section>
+    <section id="education">
       <div class="section-title">Education</div>
       <div class="edu-grid">
         <div class="edu-item">
@@ -382,5 +427,23 @@
     </section>
 
   </div>
+
+  <script>
+    const sections = ['experience', 'projects', 'education'];
+    const links = {};
+    sections.forEach(id => {
+      links[id] = document.querySelector(`.topbar-links a[href="#${id}"]`);
+    });
+    function onScroll() {
+      let current = sections[0];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 80) current = id;
+      });
+      sections.forEach(id => links[id].classList.toggle('active', id === current));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 </body>
 </html>
