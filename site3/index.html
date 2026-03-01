@@ -3,7 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog &amp; Notes · Haiyuan Mei</title>
+  <title>Blog &amp; Notes — Haiyuan Mei | ML, LLM, MLOps Engineering</title>
+  <meta name="description" content="Technical blog by Haiyuan Mei on LLM fine-tuning with LoRA, multi-agent orchestration, MLOps reference architecture on GCP, and knowledge distillation for production AI systems." />
+  <meta name="keywords" content="LLM fine-tuning blog, LoRA QLoRA, multi-agent LLM, MLOps GCP, knowledge distillation, machine learning blog, AI engineering, Haiyuan Mei" />
+  <meta name="author" content="Haiyuan Mei" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://haroldmei.github.io/site3/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="blog" />
+  <meta property="og:url" content="https://haroldmei.github.io/site3/" />
+  <meta property="og:title" content="Blog &amp; Notes — Haiyuan Mei | ML, LLM, MLOps Engineering" />
+  <meta property="og:description" content="Technical writings on LLM fine-tuning, multi-agent orchestration, MLOps on GCP and knowledge distillation by Haiyuan Mei." />
+  <meta property="og:site_name" content="Haiyuan Mei" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog &amp; Notes — Haiyuan Mei" />
+  <meta name="twitter:description" content="Technical writings on LLM fine-tuning, multi-agent orchestration, MLOps on GCP and knowledge distillation." />
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog & Notes — Haiyuan Mei",
+    "description": "Writings on machine learning, MLOps, and software engineering.",
+    "url": "https://haroldmei.github.io/site3/",
+    "author": {
+      "@type": "Person",
+      "@id": "https://haroldmei.github.io/#person",
+      "name": "Haiyuan Mei"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://haroldmei.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog & Notes", "item": "https://haroldmei.github.io/site3/" }
+      ]
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "LoRA vs Full Fine-Tuning: When to Use Each",
+        "datePublished": "2026-02-01",
+        "description": "A practical comparison of full fine-tuning and LoRA/QLoRA adapter training, covering memory footprints, convergence behaviour, and production trade-offs for 7B–70B models.",
+        "keywords": ["LLM", "LoRA", "Fine-Tuning", "QLoRA"]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Building a Multi-Agent Orchestrator from Scratch",
+        "datePublished": "2026-01-01",
+        "description": "How I designed a lightweight orchestration layer that routes requests across multiple LLM providers, with built-in caching, fallback, and cost tracking.",
+        "keywords": ["Agents", "LLM", "Architecture"]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "MLOps on GCP: A Reference Architecture",
+        "datePublished": "2025-12-01",
+        "description": "Walking through the MLOps PoC I built on GCP — from feature engineering with BigQuery to automated retraining and canary deployments on Vertex AI.",
+        "keywords": ["MLOps", "GCP", "Vertex AI"]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Knowledge Distillation: Compressing LLMs for Production",
+        "datePublished": "2025-11-01",
+        "description": "Lessons learned compressing a 13B teacher model into a 1.3B student with competitive accuracy — techniques, pitfalls, and evaluation strategies.",
+        "keywords": ["Distillation", "LLM", "Inference"]
+      }
+    ]
+  }
+  </script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
