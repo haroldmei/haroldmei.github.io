@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume · Haiyuan Mei</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav { display: flex; gap: 1rem; margin-bottom: 2.5rem; align-items: center; max-width: 800px; margin-left: auto; margin-right: auto; }
+    nav a { color: #6366f1; font-size: 0.9rem; }
+    .sep { color: #334155; }
+
+    .page { max-width: 800px; margin: 0 auto; }
+
+    /* Header */
+    .resume-header {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .resume-header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.3rem; }
+    .resume-header .title { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+    .contact { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-end; }
+    .contact a, .contact span {
+      font-size: 0.82rem; color: #64748b;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .contact a:hover { color: #818cf8; }
+
+    /* Print button */
+    .print-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #1e293b; border: 1px solid #334155;
+      color: #94a3b8; font-size: 0.8rem;
+      padding: 0.4rem 0.9rem; border-radius: 8px;
+      cursor: pointer; margin-bottom: 1.5rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .print-btn:hover { border-color: #6366f1; color: #e2e8f0; }
+
+    /* Sections */
+    section { margin-bottom: 2rem; }
+    .section-title {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #6366f1;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+    .job {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+    }
+    .job-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;
+    }
+    .job-title { font-size: 1rem; font-weight: 700; }
+    .job-company { color: #818cf8; font-weight: 600; }
+    .job-period {
+      font-size: 0.78rem; color: #475569;
+      background: #0f172a; border: 1px solid #334155;
+      padding: 0.2rem 0.6rem; border-radius: 6px; white-space: nowrap;
+    }
+    .job ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .job li {
+      font-size: 0.85rem; color: #94a3b8; line-height: 1.55;
+      padding-left: 1rem; position: relative;
+    }
+    .job li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: #6366f1; font-size: 0.7rem; top: 0.15rem;
+    }
+    .job-desc { font-size: 0.85rem; color: #94a3b8; line-height: 1.55; margin-bottom: 0.75rem; font-style: italic; }
+
+    /* Tags */
+    .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .tag {
+      background: #0f172a; border: 1px solid #334155;
+      font-size: 0.72rem; padding: 0.15rem 0.55rem;
+      border-radius: 999px; color: #64748b;
+    }
+
+    /* Projects */
+    .project {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .project h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .project ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .project li {
+      font-size: 0.85rem; color: #94a3b8; line-height: 1.55;
+      padding-left: 1rem; position: relative;
+    }
+    .project li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: #6366f1; font-size: 0.7rem; top: 0.15rem;
+    }
+
+    /* Education */
+    .edu-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .edu-item {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 10px; padding: 1rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .edu-item .degree { font-size: 0.9rem; font-weight: 600; }
+    .edu-item .school { font-size: 0.82rem; color: #818cf8; margin-top: 0.2rem; }
+    .edu-item .gpa {
+      font-size: 0.78rem; color: #22c55e;
+      background: #0f172a; border: 1px solid #334155;
+      padding: 0.2rem 0.6rem; border-radius: 6px;
+    }
+
+    @media print {
+      body { background: #fff; color: #111; padding: 1rem; }
+      nav, .print-btn { display: none; }
+      .resume-header, .job, .project, .edu-item {
+        background: #fff; border: 1px solid #ddd; box-shadow: none;
+      }
+      .job-company, a { color: #4f46e5; }
+      .job li, .project li { color: #374151; }
+      .section-title { color: #4f46e5; border-color: #e5e7eb; }
+      .job-period, .tag, .edu-item .gpa { background: #f9fafb; }
+      .tag, .edu-item .gpa { color: #6b7280; }
+      .contact a, .contact span { color: #374151; }
+      .resume-header .title { color: #6b7280; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="page">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span>Resume</span>
+  </nav>
+
+  <div class="page">
+    <button class="print-btn" onclick="window.print()">⎙ Print / Save as PDF</button>
+
+    <!-- Header -->
+    <div class="resume-header">
+      <div>
+        <h1>Haiyuan Mei</h1>
+        <div class="title">Full-Stack Engineer &nbsp;·&nbsp; AI/ML Specialist &nbsp;·&nbsp; Cloud Architect</div>
+      </div>
+      <div class="contact">
+        <a href="mailto:haroldmei.cn@gmail.com">✉ haroldmei.cn@gmail.com</a>
+        <a href="https://github.com/haroldmei" target="_blank" rel="noopener">⌥ github.com/haroldmei</a>
+        <a href="https://haroldmei.github.io" target="_blank" rel="noopener">🌐 haroldmei.github.io</a>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <section>
+      <div class="section-title">Experience</div>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">Block</span>
+              <span class="job-title"> — Staff ML Engineer</span>
+            </div>
+            <span class="job-period">Jan 2026 – Present</span>
+          </div>
+          <ul>
+            <li>Led migration of Cash App's Tecton feature pipelines to the Modular Feature System (MFS), migrating all 100+ feature views; authored comprehensive Tecton-to-MFRS migration guide covering batch/online materialization and serving.</li>
+            <li>Built Airflow operators for Dataflow and Vertex AI Docker for ETL jobs on GCP platform.</li>
+            <li>Managed Terraform for GKE-based Feature-cloud deployments including Pub/Sub, BigQuery, Datadog and PagerDuty alerting.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">GCP</span><span class="tag">Tecton</span><span class="tag">Airflow</span>
+            <span class="tag">Terraform</span><span class="tag">BigQuery</span><span class="tag">GKE</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">Culture Amp</span>
+              <span class="job-title"> — Staff ML Engineer</span>
+            </div>
+            <span class="job-period">Jul 2025 – Oct 2025</span>
+          </div>
+          <ul>
+            <li>Designed Dual-Write pattern enabling seamless migration from legacy session storage to Agno V2 schema; migrated 100k production sessions with zero downtime and 100% data integrity.</li>
+            <li>Integrated Langfuse with OpenTelemetry for real-time LLM observability — token tracking, latency monitoring, quality metrics.</li>
+            <li>Architected parallel LLM-as-a-judge QA tests in Buildkite, reducing test duration by 80%.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Agentic AI</span><span class="tag">LLM</span><span class="tag">OpenTelemetry</span>
+            <span class="tag">Langfuse</span><span class="tag">SQLAlchemy</span><span class="tag">Buildkite</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">FormMaster Pro</span>
+              <span class="job-title"> — Founding Engineer</span>
+            </div>
+            <span class="job-period">Apr 2025 – Jan 2026</span>
+          </div>
+          <p class="job-desc">AI-powered browser extension for intelligent web page content analysis and form filling automation.</p>
+          <ul>
+            <li>Designed and shipped an AI-powered Chrome extension automating form filling and document workflows.</li>
+            <li>Built full-stack SaaS with TypeScript, React, Node.js, Auth0, and Stripe for subscription/payment.</li>
+            <li>Deployed Kubernetes-based infrastructure on Vultr cloud with low-code RAG/GenAI on dify.ai; implemented CI/CD covering pre-commit checks, QA, release, versioning, and deployment.</li>
+            <li>Launched on Chrome Web Store; set up SEO via Google Search Console and Google Analytics.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Node.js</span>
+            <span class="tag">Auth0</span><span class="tag">Stripe</span><span class="tag">Kubernetes</span><span class="tag">RAG</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">WooliesX</span>
+              <span class="job-title"> — Senior ML Engineer</span>
+            </div>
+            <span class="job-period">Aug 2021 – Jul 2025</span>
+          </div>
+          <ul>
+            <li>Architected and deployed large-scale ML systems powering retail personalization, demand forecasting, and pricing intelligence.</li>
+            <li>Built MLOps pipelines (GKE, Argo, Terraform) for model lifecycle, monitoring, and automated rollback; optimized Argo pipelines saving USD $300K/year in infra costs.</li>
+            <li>Managed infrastructure with Terragrunt and Terraform on GCP for ML pipelines and SaaS deployments.</li>
+            <li>Designed and implemented DevOps automation on GitHub and Bitbucket with streamlined dev-to-production workflows.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">GKE</span><span class="tag">Argo</span><span class="tag">Terraform</span>
+            <span class="tag">GCP</span><span class="tag">MLOps</span><span class="tag">Personalization</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">Abyss Solutions</span>
+              <span class="job-title"> — Tech Lead</span>
+            </div>
+            <span class="job-period">Mar 2021 – Aug 2021</span>
+          </div>
+          <ul>
+            <li>Led computer vision ML pipeline development in C++ and Python on AWS (Batch, S3, Lambda) with Docker/Kubernetes and GPU hardware.</li>
+            <li>Led a team of 6 engineers using agile methodology.</li>
+            <li>Won 1st prize in object identification hackathon — identified thousands of objects with ARI > 0.95 in 30 seconds.</li>
+            <li>Achieved >20× speed improvement sampling 1M-point meshes from CAD models.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Computer Vision</span><span class="tag">C++</span><span class="tag">AWS</span>
+            <span class="tag">Docker</span><span class="tag">Kubernetes</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">QBE Insurance</span>
+              <span class="job-title"> — Machine Learning Engineer</span>
+            </div>
+            <span class="job-period">Oct 2019 – Mar 2021</span>
+          </div>
+          <ul>
+            <li>Built claims analysis app with Python/Dash/Flask on Docker/Kubernetes with MySQL, MongoDB, and PostgreSQL.</li>
+            <li>Integrated on-prem data analytics into QBE's internal portal via MuleSoft and Sumo Logic.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span><span class="tag">MuleSoft</span>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">Wilcom International</span>
+              <span class="job-title"> — Software Engineer</span>
+            </div>
+            <span class="job-period">Dec 2013 – Oct 2019</span>
+          </div>
+          <ul>
+            <li>Visual Studio C++ and C# CAD software development for Windows desktop applications.</li>
+          </ul>
+          <div class="tags"><span class="tag">C++</span><span class="tag">C#</span><span class="tag">CAD</span><span class="tag">Windows</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">ADVA Optical Networks</span>
+              <span class="job-title"> — Senior Software Engineer</span>
+            </div>
+            <span class="job-period">Dec 2009 – Jan 2013</span>
+          </div>
+          <ul>
+            <li>C++ and Java development for Metro Ethernet Transport devices; Ethernet/IP networking protocols, Linux GNU/GDB, FPGA driver development.</li>
+          </ul>
+          <div class="tags"><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Linux</span><span class="tag">FPGA</span><span class="tag">Networking</span></div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <span class="job-company">Huawei Technologies</span>
+              <span class="job-title"> — Team Lead</span>
+            </div>
+            <span class="job-period">Jun 2006 – Sep 2009</span>
+          </div>
+          <ul>
+            <li>C/C++ programming for BSD-based Network OS on VxWorks and Linux; TCP/IP and network protocols (MAC/VLAN, ARP, IP/ICMP/DHCP/HTTP/NAT/DNS).</li>
+            <li>Driver and application development on Broadcom/Marvell SoC.</li>
+          </ul>
+          <div class="tags"><span class="tag">C/C++</span><span class="tag">TCP/IP</span><span class="tag">Linux</span><span class="tag">VxWorks</span><span class="tag">SoC</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <div class="section-title">Projects</div>
+      <div class="project">
+        <h3>Stanford AI Graduate Certificate &nbsp;<span style="font-weight:400;color:#475569;font-size:0.8rem">Dec 2018 – Nov 2020</span></h3>
+        <ul>
+          <li><strong>Question Answering on SQuAD 2.0</strong> (PyTorch) — Reading comprehension model with QANet, BiDAF, Transformer, and Reformer architectures.</li>
+          <li><strong>StarCraft II with Reinforcement Learning</strong> (TensorFlow) — Deep RL agents (Q-Learning, A2C, A3C) combined with CNN to play StarCraft II mini-games.</li>
+          <li><strong>Hybrid Word Vectors</strong> (NLP, PyTorch) — Word vectors trained on both definitions and distributional statistics using BoW, GloVe, and S2S auto-encoder.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">NLP</span>
+          <span class="tag">Reinforcement Learning</span><span class="tag">Transformers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="section-title">Education</div>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <div>
+            <div class="degree">Graduate Certificate in Artificial Intelligence</div>
+            <div class="school">Stanford University</div>
+          </div>
+          <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap">
+            <span style="font-size:0.78rem;color:#475569">2018 – 2020</span>
+            <span class="gpa">GPA 3.8</span>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="degree">Bachelor's Degree in Computer Science</div>
+            <div class="school">Chongqing University</div>
+          </div>
+          <span style="font-size:0.78rem;color:#475569">2002 – 2006</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
