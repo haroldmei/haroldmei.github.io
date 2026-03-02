@@ -401,22 +401,21 @@
   </footer>
 
   <script>
-    // Configure marked
-    marked.setOptions({
+    // Configure marked with modern marked.use() API (v5+)
+    marked.use({
       breaks: true,
       gfm: true,
+      renderer: {
+        // token object { text, depth } in marked v5+
+        heading({ text, depth }) {
+          const slug = text.toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+          return `<h${depth} id="${slug}">${text}</h${depth}>\n`;
+        }
+      }
     });
-
-    // Custom renderer: add id anchors to headings
-    const renderer = new marked.Renderer();
-    renderer.heading = function(text, level) {
-      const slug = text.toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-');
-      return `<h${level} id="${slug}">${text}</h${level}>\n`;
-    };
-    marked.setOptions({ renderer });
 
     // Fetch and render INTRODUCTION.md
     fetch('./INTRODUCTION.md')
