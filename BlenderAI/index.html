@@ -19,12 +19,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Blender AI — Turn Words into Short Films" />
   <meta name="twitter:description" content="Describe a scene. Get a rendered animation. No 3D modelling experience required." />
-  <!-- marked.js for Markdown rendering -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- marked.js for Markdown rendering (pinned to avoid future breaking changes) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@17.0.3/marked.min.js"></script>
   <!-- highlight.js for code syntax highlighting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/highlight.min.js"></script>
   <style>
+    html { scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -125,7 +126,9 @@
     .hero h1 span {
       background: linear-gradient(135deg, #6366f1, #06b6d4);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
+      color: transparent;
     }
 
     .hero-sub {
@@ -418,22 +421,25 @@
     });
 
     // Fetch and render INTRODUCTION.md
-    fetch('./INTRODUCTION.md')
-      .then(r => {
+    (async () => {
+      try {
+        const r = await fetch('./INTRODUCTION.md');
         if (!r.ok) throw new Error('Failed to load: ' + r.status);
-        return r.text();
-      })
-      .then(md => {
-        document.getElementById('md-content').innerHTML = marked.parse(md);
-        // Syntax highlight all code blocks
-        document.querySelectorAll('#md-content pre code').forEach(block => {
-          hljs.highlightElement(block);
-        });
-      })
-      .catch(err => {
+        const md = await r.text();
+        // marked.parse() can return string or Promise depending on version/extensions
+        const html = await Promise.resolve(marked.parse(md));
+        document.getElementById('md-content').innerHTML = html;
+        // Syntax highlight all code blocks (guard in case hljs hasn't loaded)
+        if (window.hljs) {
+          document.querySelectorAll('#md-content pre code').forEach(block => {
+            hljs.highlightElement(block);
+          });
+        }
+      } catch (err) {
         document.getElementById('md-content').innerHTML =
           `<div class="state"><p>⚠ Could not load documentation: ${err.message}</p></div>`;
-      });
+      }
+    })();
   </script>
 
 </body>
