@@ -3,6 +3,9 @@
 > **Describe a scene. Get a rendered animation.**
 > No 3D modelling experience required.
 
+> **Repository status:** The Blender AI source code is being published as a standalone GitHub repository.
+> **Coming soon** — watch this page for updates.
+
 ---
 
 ## What Is This?
@@ -151,8 +154,10 @@ light across a mirrored floor. Slow motion feel.
 
 ### Install
 
+> **The repository is coming soon.** Once published, install with:
+
 ```bash
-git clone <this-repo>
+git clone https://github.com/haroldmei/blender-ai  # coming soon
 cd blender-ai
 pip install -r requirements.txt
 cp .env.example .env

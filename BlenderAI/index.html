@@ -327,6 +327,33 @@
     footer a { color: #6366f1; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* ── Coming-soon banner ── */
+    .coming-soon-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      background: #1e1b4b;
+      border: 1px solid #4f46e5;
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.85rem;
+      color: #a5b4fc;
+    }
+
+    .cs-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #818cf8;
+      animation: pulse 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.75); }
+    }
+
     /* ── Responsive ── */
     @media (max-width: 768px) {
       .toc { display: none; }
@@ -359,6 +386,10 @@
     </div>
     <h1>Blender <span>AI</span></h1>
     <p class="hero-sub">Describe a scene. Get a rendered animation. No 3D modelling experience required.</p>
+    <div class="coming-soon-banner">
+      <span class="cs-dot"></span>
+      Repository coming soon &mdash; source code will be published as a standalone GitHub project
+    </div>
   </header>
 
   <!-- ── Body ── -->
