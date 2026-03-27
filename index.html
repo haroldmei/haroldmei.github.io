@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haiyuan Mei — Staff ML Engineer | AI/MLOps | GCP</title>
-  <meta name="description" content="Haiyuan Mei is a Staff ML Engineer specialising in AI, MLOps, LLM fine-tuning and cloud infrastructure on GCP. 15+ years experience across Block, WooliesX and more." />
-  <meta name="keywords" content="Haiyuan Mei, ML Engineer, Staff Engineer, MLOps, LLM, GCP, Machine Learning, AI, Python, Kubernetes, Terraform" />
-  <meta name="author" content="Haiyuan Mei" />
+  <title>Harold Mei — Technical Consultant | AI & SaaS Development</title>
+  <meta name="description" content="Harold Mei is a Technical Consultant and AI Solutions Architect helping businesses build AI-powered products, SaaS platforms, and data-driven solutions. 15+ years experience." />
+  <meta name="keywords" content="Harold Mei, Technical Consultant, AI Consulting, SaaS Development, Machine Learning, MLOps, LLM, GCP, Applied AI, Data Solutions" />
+  <meta name="author" content="Harold Mei" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://haroldmei.github.io/" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://haroldmei.github.io/" />
-  <meta property="og:title" content="Haiyuan Mei — Staff ML Engineer | AI/MLOps | GCP" />
-  <meta property="og:description" content="Haiyuan Mei is a Staff ML Engineer specialising in AI, MLOps, LLM fine-tuning and cloud infrastructure on GCP. 15+ years experience across Block, WooliesX and more." />
-  <meta property="og:site_name" content="Haiyuan Mei" />
+  <meta property="og:title" content="Harold Mei — Technical Consultant | AI & SaaS Development" />
+  <meta property="og:description" content="Technical consulting for AI-powered products, SaaS platforms, and data-driven solutions. 15+ years experience across Block, WooliesX, and more." />
+  <meta property="og:site_name" content="Harold Mei Consulting" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Haiyuan Mei — Staff ML Engineer | AI/MLOps | GCP" />
-  <meta name="twitter:description" content="Haiyuan Mei is a Staff ML Engineer specialising in AI, MLOps, LLM fine-tuning and cloud infrastructure on GCP." />
+  <meta name="twitter:title" content="Harold Mei — Technical Consultant | AI & SaaS Development" />
+  <meta name="twitter:description" content="Technical consulting for AI-powered products, SaaS platforms, and data-driven solutions." />
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -27,19 +27,28 @@
       {
         "@type": "Person",
         "@id": "https://haroldmei.github.io/#person",
-        "name": "Haiyuan Mei",
-        "alternateName": "Harold Mei",
+        "name": "Harold Mei",
+        "alternateName": "Haiyuan Mei",
         "url": "https://haroldmei.github.io",
         "email": "haroldmei.cn@gmail.com",
-        "jobTitle": "Staff ML Engineer",
-        "description": "Staff ML Engineer specialising in AI, MLOps, LLM fine-tuning and cloud infrastructure on GCP.",
+        "jobTitle": "Technical Consultant & AI Solutions Architect",
+        "description": "Technical Consultant helping businesses build AI-powered products, SaaS platforms, and data-driven solutions.",
         "sameAs": ["https://github.com/haroldmei"],
-        "knowsAbout": ["Machine Learning", "MLOps", "Large Language Models", "GCP", "Python", "Kubernetes", "Terraform", "Feature Stores"]
+        "knowsAbout": ["AI Consulting", "SaaS Development", "Machine Learning", "MLOps", "Large Language Models", "GCP", "Python", "Kubernetes"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://haroldmei.github.io/#service",
+        "name": "Harold Mei Consulting",
+        "url": "https://haroldmei.github.io",
+        "provider": { "@id": "https://haroldmei.github.io/#person" },
+        "serviceType": ["Technical Consulting", "SaaS Development", "AI Development"],
+        "description": "Tech consulting, SaaS product development, machine learning, and applied AI solutions."
       },
       {
         "@type": "WebSite",
         "@id": "https://haroldmei.github.io/#website",
-        "name": "Haiyuan Mei",
+        "name": "Harold Mei Consulting",
         "url": "https://haroldmei.github.io",
         "author": { "@id": "https://haroldmei.github.io/#person" }
       }
@@ -48,100 +57,380 @@
   </script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #0f172a;
       color: #e2e8f0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
     }
+
+    /* Nav */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+    }
+    .topbar-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.8rem 2rem;
+    }
+    .topbar-brand {
+      font-size: 1.2rem; font-weight: 700; color: #e2e8f0;
+      text-decoration: none;
+    }
+    .topbar-brand span { color: #6366f1; }
+    .topbar-links { display: flex; gap: 1.5rem; align-items: center; }
+    .topbar-links a {
+      color: #94a3b8; text-decoration: none; font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .topbar-links a:hover { color: #e2e8f0; }
+
+    /* Sections */
+    section { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-label {
+      text-transform: uppercase; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.15em; color: #6366f1; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: #94a3b8; font-size: 1rem; line-height: 1.6; max-width: 650px;
+    }
+
+    /* Hero */
     .hero {
-      text-align: center;
-      max-width: 700px;
+      text-align: center; padding-top: 5rem; padding-bottom: 4rem;
     }
     .avatar {
-      width: 100px; height: 100px;
-      border-radius: 50%;
+      width: 90px; height: 90px; border-radius: 50%;
       background: linear-gradient(135deg, #6366f1, #06b6d4);
       display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem; margin: 0 auto 1.5rem;
+      font-size: 2.2rem; font-weight: 700; margin: 0 auto 1.5rem;
     }
-    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .subtitle { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2rem; }
-    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
-    .tag {
-      background: #1e293b; border: 1px solid #334155;
-      padding: 0.3rem 0.8rem; border-radius: 999px;
-      font-size: 0.85rem; color: #94a3b8;
+    .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero .role { color: #94a3b8; font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .hero .value-prop {
+      color: #cbd5e1; font-size: 1.05rem; line-height: 1.7;
+      max-width: 600px; margin: 0 auto 2rem;
     }
-    .cards { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-    .card {
+    .cta-btn {
+      display: inline-block; padding: 0.75rem 2rem;
+      background: #6366f1; color: #fff; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #4f46e5; transform: translateY(-2px); }
+
+    /* Services */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .service-card {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid #334155; border-radius: 12px; padding: 2rem;
+      transition: border-color 0.2s;
+    }
+    .service-card:hover { border-color: #6366f1; }
+    .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .service-card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+    .service-card ul { list-style: none; padding: 0; }
+    .service-card li {
+      color: #94a3b8; font-size: 0.85rem; padding: 0.3rem 0;
+      padding-left: 1.2rem; position: relative;
+    }
+    .service-card li::before {
+      content: ''; position: absolute; left: 0; top: 0.65rem;
+      width: 6px; height: 6px; border-radius: 50%; background: #6366f1;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .portfolio-card {
       background: #1e293b; border: 1px solid #334155;
-      border-radius: 12px; padding: 1.5rem; width: 180px;
+      border-radius: 12px; padding: 1.5rem;
       text-decoration: none; color: inherit;
       transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
     }
-    .card:hover { border-color: #6366f1; transform: translateY(-3px); }
-    .card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
-    .card p { font-size: 0.8rem; color: #64748b; }
-    footer { margin-top: 3rem; color: #475569; font-size: 0.8rem; }
+    .portfolio-card:hover { border-color: #6366f1; transform: translateY(-3px); }
+    .portfolio-card.highlighted {
+      border-color: #6366f1;
+      background: linear-gradient(135deg, #1e293b, #312e81);
+    }
+    .portfolio-card .card-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .portfolio-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .portfolio-card p { font-size: 0.8rem; color: #64748b; margin-bottom: 0.75rem; flex: 1; }
+    .card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .card-tag {
+      background: #0f172a; border: 1px solid #334155;
+      padding: 0.15rem 0.5rem; border-radius: 999px;
+      font-size: 0.7rem; color: #64748b;
+    }
+
+    /* About */
+    .about-content { margin-top: 1.5rem; }
+    .about-content p {
+      color: #94a3b8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;
+    }
+    .credentials {
+      display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem;
+    }
+    .credential {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 8px; padding: 0.6rem 1rem;
+      font-size: 0.85rem; color: #94a3b8;
+    }
+    .about-link {
+      color: #6366f1; text-decoration: none; font-size: 0.95rem; font-weight: 600;
+    }
+    .about-link:hover { text-decoration: underline; }
+
+    /* Contact */
+    .contact-section { text-align: center; padding-bottom: 4rem; }
+    .contact-section .section-desc { margin: 0 auto 2rem; }
+    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-block; padding: 0.7rem 1.5rem;
+      border: 1px solid #334155; border-radius: 8px;
+      color: #e2e8f0; text-decoration: none; font-size: 0.9rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .contact-link:hover { border-color: #6366f1; transform: translateY(-2px); }
+    .contact-link.primary {
+      background: #6366f1; border-color: #6366f1; color: #fff;
+    }
+    .contact-link.primary:hover { background: #4f46e5; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 2rem;
+      color: #475569; font-size: 0.8rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .topbar-inner { padding: 0.6rem 1rem; }
+      .topbar-links { gap: 1rem; }
+      .topbar-links a { font-size: 0.8rem; }
+      .hero h1 { font-size: 1.8rem; }
+      section { padding: 3rem 1.25rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="avatar">HM</div>
-    <h1>Haiyuan Mei</h1>
-    <p class="subtitle">Staff ML Engineer · AI/MLOps · GCP</p>
-    <div class="tags">
-      <span class="tag">Machine Learning</span>
-      <span class="tag">LLM</span>
-      <span class="tag">MLOps</span>
-      <span class="tag">GCP</span>
-      <span class="tag">Python</span>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">Harold <span>Mei</span></div>
+      <nav class="topbar-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/resume">Resume</a>
+      </nav>
     </div>
-    <div class="cards">
-      <a href="/ai-coworker" class="card" style="border-color: #6366f1; background: linear-gradient(135deg, #1e293b, #312e81);">
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="avatar">HM</div>
+    <h1>Harold Mei</h1>
+    <p class="role">Technical Consultant &amp; AI Solutions Architect</p>
+    <p class="value-prop">
+      I help businesses build AI-powered products, SaaS platforms, and data-driven solutions.
+      From proof-of-concept to production — with 15+ years of engineering experience across
+      Block, WooliesX, and leading tech companies.
+    </p>
+    <a href="#contact" class="cta-btn">Get in Touch</a>
+  </section>
+
+  <section id="services">
+    <p class="section-label">What I Do</p>
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Tech Consulting &amp; SaaS Development</h3>
+        <p>
+          End-to-end SaaS product development from architecture to deployment.
+          Machine learning and data solutions that drive measurable business outcomes.
+        </p>
+        <ul>
+          <li>SaaS architecture &amp; full-stack development</li>
+          <li>Recommendation systems &amp; personalization</li>
+          <li>Loyalty programs &amp; pricing intelligence</li>
+          <li>Cloud infrastructure (GCP / AWS / Kubernetes)</li>
+          <li>MLOps pipelines &amp; CI/CD</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Applied AI Development &amp; Consulting</h3>
+        <p>
+          Enabling businesses to harness AI for extracting enhanced value from their data.
+          From strategic assessment to production-grade AI systems.
+        </p>
+        <ul>
+          <li>LLM integration &amp; GenAI applications</li>
+          <li>Agentic AI &amp; multi-agent systems</li>
+          <li>RAG pipelines &amp; knowledge retrieval</li>
+          <li>Model fine-tuning &amp; distillation</li>
+          <li>AI-powered workflow automation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <p class="section-label">Past Work</p>
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-desc">Selected projects demonstrating end-to-end delivery across AI, SaaS, and infrastructure.</p>
+    <div class="portfolio-grid">
+      <a href="/ai-coworker" class="portfolio-card highlighted">
         <div class="card-icon">🤖</div>
         <h3>AI Co-worker</h3>
-        <p>Agentic AI for enterprise</p>
+        <p>Enterprise agentic AI system for workflow automation</p>
+        <div class="card-tags">
+          <span class="card-tag">Agentic AI</span>
+          <span class="card-tag">LLM</span>
+          <span class="card-tag">Enterprise</span>
+        </div>
       </a>
-      <a href="/site1" class="card">
+      <a href="/formmasterpro" class="portfolio-card">
+        <div class="card-icon">🧩</div>
+        <h3>FormMasterPro.com</h3>
+        <p>AI-powered Chrome extension for form filling and document automation</p>
+        <div class="card-tags">
+          <span class="card-tag">TypeScript</span>
+          <span class="card-tag">React</span>
+          <span class="card-tag">RAG</span>
+          <span class="card-tag">Stripe</span>
+        </div>
+      </a>
+      <a href="/mistermei" class="portfolio-card">
+        <div class="card-icon">🎓</div>
+        <h3>MisterMei.com</h3>
+        <p>Adaptive AI learning platform for tech teams with verifiable credentials</p>
+        <div class="card-tags">
+          <span class="card-tag">AI Tutor</span>
+          <span class="card-tag">Claude</span>
+          <span class="card-tag">Full-Stack</span>
+        </div>
+      </a>
+      <a href="/site1" class="portfolio-card">
         <div class="card-icon">🤖</div>
         <h3>ML Projects</h3>
-        <p>Models, pipelines &amp; experiments</p>
+        <p>LLM fine-tuning, stock prediction, knowledge distillation</p>
+        <div class="card-tags">
+          <span class="card-tag">PyTorch</span>
+          <span class="card-tag">HuggingFace</span>
+          <span class="card-tag">LLM</span>
+        </div>
       </a>
-      <a href="/site2" class="card">
+      <a href="/site2" class="portfolio-card">
         <div class="card-icon">⚙️</div>
-        <h3>MLOps &amp; Infra</h3>
-        <p>Platforms, tooling &amp; automation</p>
+        <h3>MLOps &amp; Infrastructure</h3>
+        <p>Cloud ML platforms, orchestration, and automation pipelines</p>
+        <div class="card-tags">
+          <span class="card-tag">GCP</span>
+          <span class="card-tag">Kubernetes</span>
+          <span class="card-tag">Terraform</span>
+        </div>
       </a>
-      <a href="/site3" class="card">
+      <a href="/site3" class="portfolio-card">
         <div class="card-icon">📝</div>
-        <h3>Blog &amp; Notes</h3>
-        <p>Writings on AI and engineering</p>
+        <h3>Blog &amp; Technical Notes</h3>
+        <p>Writings on AI, LLMs, and MLOps engineering</p>
+        <div class="card-tags">
+          <span class="card-tag">LLM</span>
+          <span class="card-tag">MLOps</span>
+          <span class="card-tag">Architecture</span>
+        </div>
       </a>
-      <a href="/job-scraper" class="card">
+      <a href="/job-scraper" class="portfolio-card">
         <div class="card-icon">🔍</div>
-        <h3>Job Scraper</h3>
-        <p>Daily FAANG job matches by AI</p>
+        <h3>AI Job Matcher</h3>
+        <p>Automated ML-powered job matching data pipeline</p>
+        <div class="card-tags">
+          <span class="card-tag">AI</span>
+          <span class="card-tag">Automation</span>
+          <span class="card-tag">Pipeline</span>
+        </div>
       </a>
-      <a href="/resume" class="card">
-        <div class="card-icon">📄</div>
-        <h3>Resume</h3>
-        <p>Experience, projects &amp; education</p>
-      </a>
-      <a href="/BlenderAI" class="card">
+      <a href="/BlenderAI" class="portfolio-card">
         <div class="card-icon">🎬</div>
         <h3>Blender AI</h3>
-        <p>Words-to-animation pipeline</p>
+        <p>Natural language to 3D animation pipeline</p>
+        <div class="card-tags">
+          <span class="card-tag">Claude</span>
+          <span class="card-tag">Blender</span>
+          <span class="card-tag">Open Source</span>
+        </div>
+      </a>
+      <a href="/resume" class="portfolio-card">
+        <div class="card-icon">📄</div>
+        <h3>Resume</h3>
+        <p>Full CV, work history, and education</p>
+        <div class="card-tags">
+          <span class="card-tag">15+ Years</span>
+          <span class="card-tag">Stanford AI</span>
+        </div>
       </a>
     </div>
-  </div>
-  <footer>haroldmei.github.io · Haiyuan Mei</footer>
+  </section>
+
+  <section id="about">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About</h2>
+    <div class="about-content">
+      <p>
+        I'm an independent technical consultant with 15+ years of experience building
+        production ML systems, SaaS products, and cloud infrastructure. I've held senior
+        and staff engineering roles at Block (Square), WooliesX, Culture Amp, and Huawei,
+        shipping systems that serve millions of users.
+      </p>
+      <p>
+        I hold a Graduate Certificate in Artificial Intelligence from Stanford University
+        and specialise in bridging the gap between AI research and production deployment.
+        Whether you need a recommendation engine, an LLM-powered workflow, or a full SaaS
+        product built from scratch — I can take it from concept to launch.
+      </p>
+      <div class="credentials">
+        <div class="credential">Stanford AI Graduate Certificate</div>
+        <div class="credential">15+ Years Engineering</div>
+        <div class="credential">Block / Square</div>
+        <div class="credential">WooliesX</div>
+        <div class="credential">Culture Amp</div>
+        <div class="credential">Huawei</div>
+      </div>
+      <p style="margin-top: 1.5rem;">
+        <a href="/resume" class="about-link">View full resume &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <p class="section-label">Let's Talk</p>
+    <h2 class="section-title">Ready to build something great?</h2>
+    <p class="section-desc">
+      Whether you have a specific project in mind or want to explore how AI can
+      add value to your business — I'd love to hear from you.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:haroldmei.cn@gmail.com?subject=Consulting%20Inquiry" class="contact-link primary">Email Me</a>
+      <a href="https://github.com/haroldmei" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <footer>Harold Mei &middot; Technical Consulting &middot; haroldmei.github.io</footer>
 </body>
 </html>

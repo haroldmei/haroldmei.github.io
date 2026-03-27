@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormMasterPro — AI-Powered Form Automation | Harold Mei</title>
+  <meta name="description" content="FormMasterPro: AI-powered Chrome extension for intelligent web page content analysis and form filling automation. Built with TypeScript, React, and RAG/GenAI." />
+  <meta name="author" content="Harold Mei" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://haroldmei.github.io/formmasterpro/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haroldmei.github.io/formmasterpro/" />
+  <meta property="og:title" content="FormMasterPro — AI-Powered Form Automation" />
+  <meta property="og:description" content="AI-powered Chrome extension for intelligent form filling and document automation." />
+  <meta property="og:site_name" content="Harold Mei Consulting" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="FormMasterPro — AI-Powered Form Automation" />
+  <meta name="twitter:description" content="AI-powered Chrome extension for intelligent form filling and document automation." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    .back-link {
+      display: inline-block; color: #6366f1; text-decoration: none;
+      margin-bottom: 2rem; font-size: 0.95rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .hero { text-align: center; padding: 3rem 0; }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 0.4rem 1rem; border-radius: 999px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tagline { font-size: 1.3rem; color: #94a3b8; margin-bottom: 2rem; }
+    .pitch-box {
+      background: linear-gradient(135deg, #1e293b, #312e81);
+      border: 1px solid #6366f1; border-radius: 16px;
+      padding: 2.5rem; margin-bottom: 2.5rem; text-align: left;
+    }
+    .pitch-box p {
+      color: #94a3b8; line-height: 1.7; margin-bottom: 1rem;
+    }
+    .pitch-box p:last-child { margin-bottom: 0; }
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem; margin-bottom: 2.5rem;
+    }
+    .feature {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .feature h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .feature p { font-size: 0.9rem; color: #64748b; line-height: 1.6; }
+    .tech-section { margin-bottom: 2.5rem; }
+    .tech-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .tech-stack { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .tech-tag {
+      background: #1e293b; border: 1px solid #334155;
+      padding: 0.3rem 0.8rem; border-radius: 999px;
+      font-size: 0.85rem; color: #94a3b8;
+    }
+    .cta { text-align: center; padding: 2rem 0; }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1, #06b6d4);
+      color: white; padding: 1rem 2.5rem; border-radius: 12px;
+      text-decoration: none; font-weight: 600; font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+    footer {
+      text-align: center; color: #475569; font-size: 0.85rem;
+      padding-top: 2rem; border-top: 1px solid #1e293b; margin-top: 3rem;
+    }
+    footer a { color: #6366f1; text-decoration: none; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back-link">&larr; Back to Home</a>
+
+    <div class="hero">
+      <span class="badge">🧩 SaaS Product</span>
+      <h1>FormMasterPro</h1>
+      <p class="tagline">AI-Powered Form Filling &amp; Document Automation</p>
+    </div>
+
+    <div class="pitch-box">
+      <p>
+        FormMasterPro is an AI-powered Chrome extension that intelligently analyses web page
+        content and automates form filling and document workflows. It uses RAG and GenAI to
+        understand context, extract relevant data, and complete forms accurately — saving hours
+        of repetitive manual work.
+      </p>
+      <p>
+        Built as a full SaaS product with subscription billing, user authentication,
+        and cloud-native infrastructure. Launched on the Chrome Web Store with SEO
+        via Google Search Console and Google Analytics.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🧠</div>
+        <h3>AI Content Analysis</h3>
+        <p>RAG-powered engine that understands page context and extracts relevant data for intelligent form completion.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌐</div>
+        <h3>Chrome Extension</h3>
+        <p>Seamless browser integration — analyses any web page and fills forms with a single click.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💳</div>
+        <h3>SaaS Billing &amp; Auth</h3>
+        <p>Full subscription management with Stripe payments and Auth0 authentication. Production-grade user management.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">☁️</div>
+        <h3>Cloud-Native Deployment</h3>
+        <p>Kubernetes-based infrastructure on Vultr cloud with RAG/GenAI backend powered by dify.ai.</p>
+      </div>
+    </div>
+
+    <div class="tech-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Auth0</span>
+        <span class="tech-tag">Stripe</span>
+        <span class="tech-tag">Kubernetes</span>
+        <span class="tech-tag">RAG / GenAI</span>
+        <span class="tech-tag">dify.ai</span>
+        <span class="tech-tag">Chrome Extension API</span>
+        <span class="tech-tag">Google Analytics</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="https://formmasterpro.com" class="cta-button" target="_blank" rel="noopener">
+        Visit FormMasterPro.com &rarr;
+      </a>
+    </div>
+
+    <footer>
+      Built by Harold Mei &middot; <a href="/">haroldmei.github.io</a>
+    </footer>
+  </div>
+</body>
+</html>
