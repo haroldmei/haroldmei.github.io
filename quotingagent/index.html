@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLN5D2XMZ8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLN5D2XMZ8');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuotingAgent — Case Study | Harold Mei</title>
+  <meta name="description" content="QuotingAgent: a photo-to-SMS quoting app for Western Sydney trades. Snap site photos, get a Bunnings-priced, NSW-licensed itemised quote on the customer's phone in minutes. Built end-to-end by Harold Mei with Next.js, Supabase, and Claude vision AI." />
+  <meta name="author" content="Harold Mei" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://haroldmei.github.io/quotingagent/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://haroldmei.github.io/quotingagent/" />
+  <meta property="og:title" content="QuotingAgent — Case Study | Harold Mei" />
+  <meta property="og:description" content="Photo-to-SMS quoting for Western Sydney trades: vision AI, NSW-licensed quotes, SMS delivery. Built end-to-end with Next.js, Supabase, and Claude." />
+  <meta property="og:image" content="https://haroldmei.github.io/assets/screens/quotingagent-hero.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "QuotingAgent",
+    "description": "Photo-to-SMS quoting app for Western Sydney residential trades.",
+    "url": "https://haroldmei.github.io/quotingagent/",
+    "author": { "@type": "Person", "@id": "https://haroldmei.github.io/#person", "name": "Harold Mei" },
+    "programmingLanguage": ["TypeScript", "Python"],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://haroldmei.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "QuotingAgent", "item": "https://haroldmei.github.io/quotingagent/" }
+      ]
+    }
+  }
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    nav { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 2.5rem; font-size: 0.9rem; }
+    nav a { color: #6366f1; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    nav .sep { color: #334155; }
+    nav span.cur { color: #64748b; }
+    .status { display: inline-block; background: #1e293b; border: 1px solid #334155; color: #fbbf24;
+      border-radius: 999px; padding: 0.25rem 0.8rem; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.03em; margin-bottom: 1rem; }
+    h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .tagline { color: #cbd5e1; font-size: 1.2rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .lede { color: #94a3b8; font-size: 1rem; max-width: 720px; margin-bottom: 1.5rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.5rem; }
+    .chip { background: #1e293b; border: 1px solid #334155; color: #94a3b8;
+      font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 999px; }
+    h2 { font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    figure { margin: 1.5rem 0; }
+    figure img { width: 100%; border: 1px solid #334155; border-radius: 12px; display: block; background: #fff; }
+    figcaption { color: #64748b; font-size: 0.82rem; margin-top: 0.6rem; text-align: center; }
+    .feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .feat .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.25rem; }
+    .feat h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: #e2e8f0; }
+    .feat p { font-size: 0.85rem; color: #94a3b8; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .meta-grid .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .meta-grid .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6366f1; font-weight: 700; margin-bottom: 0.4rem; }
+    .meta-grid .val { font-size: 0.88rem; color: #cbd5e1; }
+    .backlink { display: inline-block; margin-top: 2.5rem; color: #6366f1; text-decoration: none; font-weight: 600; }
+    .backlink:hover { text-decoration: underline; }
+    footer { border-top: 1px solid #1e293b; color: #475569; font-size: 0.8rem; text-align: center; padding: 2rem; margin-top: 2rem; }
+    @media (max-width: 600px) { .wrap { padding: 1.5rem 1.25rem; } h1 { font-size: 1.7rem; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/#portfolio">Portfolio</a><span class="sep">/</span>
+      <span class="cur">QuotingAgent</span>
+    </nav>
+
+    <span class="status">● Built — preview build, dogfooded · not yet publicly deployed</span>
+    <h1>🏠 QuotingAgent</h1>
+    <p class="tagline">Your next quote done before you start the ute.</p>
+    <p class="lede">
+      A photo-to-SMS quoting app for 1–10 staff residential trades in Western Sydney. The tradie snaps
+      a few site photos; vision AI extracts the scope, prices materials from Bunnings and labour from the
+      tradie's own past rates, stamps the NSW contractor licence number and statutory warranty, and sends
+      an itemised quote to the customer's phone — all in about five minutes, on site, instead of at the
+      kitchen table that night.
+    </p>
+    <div class="chips">
+      <span class="chip">Next.js 15</span><span class="chip">React 19</span>
+      <span class="chip">Supabase (Postgres + RLS)</span><span class="chip">Claude Vision</span>
+      <span class="chip">Twilio SMS</span><span class="chip">BullMQ · Cloud Run</span>
+      <span class="chip">@react-pdf</span><span class="chip">Playwright · Vitest</span>
+    </div>
+
+    <h2>Screens</h2>
+    <figure>
+      <img src="/assets/screens/quotingagent-hero.png" alt="QuotingAgent landing page — 'Your next quote done before you start the ute'" loading="lazy" />
+      <figcaption>Landing page — fast AI quoting positioned for Western Sydney trades.</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/screens/quotingagent-leads.png" alt="QuotingAgent lead inbox showing roofing leads across Penrith, Blacktown and Parramatta" loading="lazy" />
+      <figcaption>Lead inbox — jobs flow in tagged New / Generating / Review / Sent / Won, each one tap from "Take Photos".</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/screens/quotingagent-newlead.png" alt="QuotingAgent new lead capture modal" loading="lazy" />
+      <figcaption>Capturing a lead — name, mobile, address, and an optional job description in seconds.</figcaption>
+    </figure>
+
+    <h2>What makes it work</h2>
+    <div class="feat">
+      <div class="card"><h3>Photo → quote in ~60s</h3><p>Vision AI turns 4–10 site photos into an itemised, Bunnings-priced, labour-rated draft while the tradie is still in the ute.</p></div>
+      <div class="card"><h3>NSW-compliant by default</h3><p>Every quote auto-stamps the contractor licence number, GST, and statutory warranty wording — no manual boilerplate.</p></div>
+      <div class="card"><h3>SMS-sent, one-tap accept</h3><p>The quote lands on the customer's phone with read receipts; they accept with one tap instead of printing and signing a PDF.</p></div>
+      <div class="card"><h3>Fits the existing toolbelt</h3><p>Designed to sit alongside ServiceM8 / Tradify and lead pipelines rather than replace them.</p></div>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="meta-grid">
+      <div class="card"><div class="label">Customer</div><div class="val">2–5 staff residential roofers &amp; painters across Greater Western Sydney.</div></div>
+      <div class="card"><div class="label">Wedge</div><div class="val">Quote on site in minutes, AU-priced and NSW-licence-bound — not "tonight's homework".</div></div>
+      <div class="card"><div class="label">Pricing</div><div class="val">Solo: free + 3% on won jobs · Crew: A$99/mo · Multi-Crew: A$199/mo.</div></div>
+      <div class="card"><div class="label">Build scope</div><div class="val">Full-stack app, vision/text evals, Playwright E2E, security audit, background workers.</div></div>
+    </div>
+
+    <a class="backlink" href="/#portfolio">&larr; Back to portfolio</a>
+  </div>
+  <footer>
+    <p>Harold Mei · Staff ML Engineer &amp; AI Solutions Architect · Sydney, Australia</p>
+  </footer>
+</body>
+</html>

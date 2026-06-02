@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLN5D2XMZ8"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RLN5D2XMZ8');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildPM — Case Study | Harold Mei</title>
+  <meta name="description" content="BuildPM: an AI project manager for Australian construction. Describe a renovation in plain English, get an AI-generated plan, publish tasks to licensed tradies, and compare quotes. Built end-to-end by Harold Mei with Next.js, Postgres, and Claude." />
+  <meta name="author" content="Harold Mei" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://haroldmei.github.io/buildpm/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://haroldmei.github.io/buildpm/" />
+  <meta property="og:title" content="BuildPM — Case Study | Harold Mei" />
+  <meta property="og:description" content="AI project manager for Australian construction: plain-English project planning, licensed-tradie marketplace, quote comparison, CDC assistance." />
+  <meta property="og:image" content="https://haroldmei.github.io/assets/screens/buildpm-hero.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "BuildPM",
+    "description": "AI project manager for Australian construction and renovation.",
+    "url": "https://haroldmei.github.io/buildpm/",
+    "author": { "@type": "Person", "@id": "https://haroldmei.github.io/#person", "name": "Harold Mei" },
+    "programmingLanguage": ["TypeScript"],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://haroldmei.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "BuildPM", "item": "https://haroldmei.github.io/buildpm/" }
+      ]
+    }
+  }
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    nav { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 2.5rem; font-size: 0.9rem; }
+    nav a { color: #6366f1; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    nav .sep { color: #334155; }
+    nav span.cur { color: #64748b; }
+    .status { display: inline-block; background: #1e293b; border: 1px solid #334155; color: #fbbf24;
+      border-radius: 999px; padding: 0.25rem 0.8rem; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.03em; margin-bottom: 1rem; }
+    h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .tagline { color: #cbd5e1; font-size: 1.2rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .lede { color: #94a3b8; font-size: 1rem; max-width: 720px; margin-bottom: 1.5rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.5rem; }
+    .chip { background: #1e293b; border: 1px solid #334155; color: #94a3b8;
+      font-size: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 999px; }
+    h2 { font-size: 1.3rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    figure { margin: 1.5rem 0; }
+    figure img { width: 100%; border: 1px solid #334155; border-radius: 12px; display: block; background: #fff; }
+    figcaption { color: #64748b; font-size: 0.82rem; margin-top: 0.6rem; text-align: center; }
+    .feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .feat .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.25rem; }
+    .feat h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: #e2e8f0; }
+    .feat p { font-size: 0.85rem; color: #94a3b8; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .meta-grid .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .meta-grid .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6366f1; font-weight: 700; margin-bottom: 0.4rem; }
+    .meta-grid .val { font-size: 0.88rem; color: #cbd5e1; }
+    .backlink { display: inline-block; margin-top: 2.5rem; color: #6366f1; text-decoration: none; font-weight: 600; }
+    .backlink:hover { text-decoration: underline; }
+    footer { border-top: 1px solid #1e293b; color: #475569; font-size: 0.8rem; text-align: center; padding: 2rem; margin-top: 2rem; }
+    @media (max-width: 600px) { .wrap { padding: 1.5rem 1.25rem; } h1 { font-size: 1.7rem; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/#portfolio">Portfolio</a><span class="sep">/</span>
+      <span class="cur">BuildPM</span>
+    </nav>
+
+    <span class="status">● Built — MVP build, runs locally · not yet publicly deployed</span>
+    <h1>🏗️ BuildPM</h1>
+    <p class="tagline">Your AI project manager for Australian construction.</p>
+    <p class="lede">
+      A renovation-management platform for Australian property owners. Describe a project in plain English
+      and the AI generates a structured plan — phases, tasks and dependencies, material estimates, the
+      licence categories required, and a duration forecast. From there the owner publishes tasks to a
+      marketplace of verified-licensed tradies, compares quotes side by side, and tracks the build from
+      one dashboard — without paying a A$9–18K project-manager fee.
+    </p>
+    <div class="chips">
+      <span class="chip">Next.js 16</span><span class="chip">React 19</span>
+      <span class="chip">Prisma · Postgres</span><span class="chip">Redis · BullMQ</span>
+      <span class="chip">Claude</span><span class="chip">Terraform · GCP Cloud Run</span>
+      <span class="chip">Buildkite CI</span><span class="chip">Playwright · Vitest</span>
+    </div>
+
+    <h2>Screens</h2>
+    <figure>
+      <img src="/assets/screens/buildpm-hero.png" alt="BuildPM landing page — 'Your AI Project Manager for Australian Construction'" loading="lazy" />
+      <figcaption>Landing page — plain-English planning, licensed tradies, project management, powered by AI.</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/screens/buildpm-howto.png" alt="BuildPM 'How it works' steps: Describe, AI Plans, Get Quotes, Manage" loading="lazy" />
+      <figcaption>The flow — describe → AI plans → get quotes from verified tradies → manage end to end.</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/screens/buildpm-register.png" alt="BuildPM account creation screen with Property Owner and Supplier / Tradie roles" loading="lazy" />
+      <figcaption>Onboarding — two-sided from the start: property owners and supplier / tradie accounts.</figcaption>
+    </figure>
+
+    <h2>What makes it work</h2>
+    <div class="feat">
+      <div class="card"><h3>AI project plans</h3><p>Task breakdown, timeline, and cost estimates generated from a plain-English project description.</p></div>
+      <div class="card"><h3>Verified supplier marketplace</h3><p>Only licensed tradies — see licence status, ratings and past work, and compare quotes side by side.</p></div>
+      <div class="card"><h3>CDC assistance</h3><p>Complying-development eligibility checks, document checklists, and guidance built into the flow.</p></div>
+      <div class="card"><h3>Material estimates</h3><p>AI-powered quantity takeoff and costing for every phase of the project.</p></div>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="meta-grid">
+      <div class="card"><div class="label">Customer</div><div class="val">Australian homeowners running A$150–300K renovations, plus property investors and tradies.</div></div>
+      <div class="card"><div class="label">Wedge</div><div class="val">Project-manager-grade planning and trade coordination without the project-manager fee.</div></div>
+      <div class="card"><div class="label">Stage</div><div class="val">MVP build complete; pricing model still to be finalised.</div></div>
+      <div class="card"><div class="label">Build scope</div><div class="val">Full-stack two-sided app, background jobs, Terraform IaC on GCP, Buildkite CI/CD, E2E tests.</div></div>
+    </div>
+
+    <a class="backlink" href="/#portfolio">&larr; Back to portfolio</a>
+  </div>
+  <footer>
+    <p>Harold Mei · Staff ML Engineer &amp; AI Solutions Architect · Sydney, Australia</p>
+  </footer>
+</body>
+</html>
