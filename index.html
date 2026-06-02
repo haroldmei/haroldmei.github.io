@@ -225,6 +225,52 @@
       font-size: 0.7rem; color: #64748b;
     }
 
+    /* Live Products */
+    .live-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .live-card {
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 14px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .live-card:hover { border-color: #6366f1; transform: translateY(-3px); }
+    .live-shot {
+      position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+      border-bottom: 1px solid #334155; background: #0f172a;
+    }
+    .live-shot img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      display: block;
+    }
+    .live-badge {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px);
+      border: 1px solid #334155; border-radius: 999px;
+      padding: 0.2rem 0.7rem; font-size: 0.72rem; font-weight: 600;
+      color: #e2e8f0; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .live-badge::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: #22c55e; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      animation: livepulse 2s infinite;
+    }
+    @keyframes livepulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+      70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+    .live-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .live-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .live-tagline { color: #cbd5e1; font-size: 0.92rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .live-desc { color: #94a3b8; font-size: 0.85rem; line-height: 1.55; margin-bottom: 1rem; flex: 1; }
+    .live-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+    .live-cta { color: #6366f1; font-size: 0.88rem; font-weight: 600; white-space: nowrap; }
+    .live-card:hover .live-cta { text-decoration: underline; }
+
     /* About */
     .about-content { margin-top: 1.5rem; }
     .about-content p {
@@ -274,6 +320,7 @@
       .hero h1 { font-size: 1.8rem; }
       section { padding: 3rem 1.25rem; }
       .services-grid { grid-template-columns: 1fr; }
+      .live-grid { grid-template-columns: 1fr; }
       .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
     }
   </style>
@@ -284,6 +331,7 @@
       <div class="topbar-brand">Harold <span>Mei</span></div>
       <nav class="topbar-links" aria-label="Main navigation">
         <a href="#services">Services</a>
+        <a href="#live">Live Demos</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -355,22 +403,125 @@
     </div>
   </section>
 
+  <section id="live">
+    <p class="section-label">Try Them Live</p>
+    <h2 class="section-title">Live Products</h2>
+    <p class="section-desc">
+      Full SaaS products I designed, built, and shipped end-to-end — market analysis,
+      product spec, full-stack build, and deploy. Each card opens the real running app.
+    </p>
+    <div class="live-grid">
+
+      <a href="https://sklforge.com" class="live-card" target="_blank" rel="noopener" aria-label="Open SkillForge AI live">
+        <div class="live-shot">
+          <img src="/assets/screens/sklforge.png" alt="SkillForge AI landing page screenshot" loading="lazy" width="1280" height="800" />
+          <span class="live-badge">Live</span>
+        </div>
+        <div class="live-body">
+          <h3>SkillForge AI</h3>
+          <p class="live-tagline">The AI tutor that adapts to how your team learns.</p>
+          <p class="live-desc">
+            Adaptive, Socratic AI tutoring delivered where developers already work — backed by
+            verifiable W3C credentials that prove what each engineer actually knows.
+          </p>
+          <div class="live-foot">
+            <div class="card-tags">
+              <span class="card-tag">AI Tutor</span>
+              <span class="card-tag">Claude</span>
+              <span class="card-tag">Credentials</span>
+            </div>
+            <span class="live-cta">sklforge.com &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://ledgerly-staging.vercel.app" class="live-card" target="_blank" rel="noopener" aria-label="Open Ledgerly live">
+        <div class="live-shot">
+          <img src="/assets/screens/ledgerly.png" alt="Ledgerly landing page screenshot" loading="lazy" width="1280" height="800" />
+          <span class="live-badge">Live</span>
+        </div>
+        <div class="live-body">
+          <h3>Ledgerly</h3>
+          <p class="live-tagline">Only the lines a TPB auditor would ask about.</p>
+          <p class="live-desc">
+            An AU-tax exception queue for bookkeeping firms: scores every Xero draft, hides the
+            confident 85%, and bulk-publishes with a per-line, audit-defensible reasoning record.
+          </p>
+          <div class="live-foot">
+            <div class="card-tags">
+              <span class="card-tag">Next.js</span>
+              <span class="card-tag">AU Tax</span>
+              <span class="card-tag">Claude</span>
+            </div>
+            <span class="live-cta">Open live demo &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://scribermate.vercel.app" class="live-card" target="_blank" rel="noopener" aria-label="Open ScribeMate live">
+        <div class="live-shot">
+          <img src="/assets/screens/scribermate.png" alt="ScribeMate landing page screenshot" loading="lazy" width="1280" height="800" />
+          <span class="live-badge">Live</span>
+        </div>
+        <div class="live-body">
+          <h3>ScribeMate</h3>
+          <p class="live-tagline">Catch rejected Medicare claims in 30 seconds, not 5 days.</p>
+          <p class="live-desc">
+            An allied-health AI scribe that writes discipline-specific SOAP notes, suggests the
+            correct MBS item code with a rule trace, and flags rejection risk before you submit.
+          </p>
+          <div class="live-foot">
+            <div class="card-tags">
+              <span class="card-tag">AI Scribe</span>
+              <span class="card-tag">Healthcare</span>
+              <span class="card-tag">AU</span>
+            </div>
+            <span class="live-cta">Open live demo &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://pi-au.com" class="live-card" target="_blank" rel="noopener" aria-label="Open ProjectIntelligence AU live">
+        <div class="live-shot">
+          <img src="/assets/screens/pi-au.png" alt="ProjectIntelligence AU landing page screenshot" loading="lazy" width="1280" height="800" />
+          <span class="live-badge">Live</span>
+        </div>
+        <div class="live-body">
+          <h3>ProjectIntelligence AU</h3>
+          <p class="live-tagline">The Sunday roofing digest for Sydney subbies.</p>
+          <p class="live-desc">
+            Curated re-roof development-application leads across 15 Sydney councils, AI-ranked to
+            roofing vocabulary and delivered every Sunday — using embeddings + an LLM reranker.
+          </p>
+          <div class="live-foot">
+            <div class="card-tags">
+              <span class="card-tag">AI Relevance</span>
+              <span class="card-tag">pgvector</span>
+              <span class="card-tag">Stripe</span>
+            </div>
+            <span class="live-cta">pi-au.com &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
   <section id="portfolio">
     <p class="section-label">Past Work</p>
     <h2 class="section-title">Portfolio</h2>
     <p class="section-desc">Selected projects demonstrating end-to-end delivery across AI, SaaS, and infrastructure.</p>
     <div class="portfolio-grid">
-      <a href="/sklforge" class="portfolio-card highlighted">
+      <a href="/sklforge" class="portfolio-card">
         <div class="card-icon">🎓</div>
-        <h3>sklforge.com</h3>
-        <p>Adaptive AI learning platform for tech teams with verifiable credentials</p>
+        <h3>SkillForge — case study</h3>
+        <p>Architecture deep-dive for the adaptive AI learning platform (see live demo above)</p>
         <div class="card-tags">
-          <span class="card-tag">AI Tutor</span>
-          <span class="card-tag">Claude</span>
-          <span class="card-tag">Full-Stack</span>
+          <span class="card-tag">Write-up</span>
+          <span class="card-tag">Architecture</span>
         </div>
       </a>
-      <a href="/formmasterpro" class="portfolio-card">
+      <a href="/formmasterpro" class="portfolio-card highlighted">
         <div class="card-icon">🧩</div>
         <h3>FormMasterPro.com</h3>
         <p>AI-powered Chrome extension for form filling and document automation</p>
