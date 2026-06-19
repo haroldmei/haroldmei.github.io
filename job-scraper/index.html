@@ -87,13 +87,13 @@
   </nav>
   <div class="header">
     <h1>Job Matches</h1>
-    <p class="meta">Run: <span>2026-06-18</span> &nbsp;·&nbsp; <span id="shown">0</span> of <span>1</span> jobs shown</p>
+    <p class="meta">Run: <span>2026-06-19</span> &nbsp;·&nbsp; <span id="shown">0</span> of <span>0</span> jobs shown</p>
   </div>
   <div class="controls">
     <input type="text" id="search" placeholder="Search title or location..." oninput="filter()" />
     <select id="company" onchange="filter()">
       <option value="">All companies</option>
-      <option value="Amazon">Amazon</option>
+
     </select>
     <select id="sort" onchange="filter()">
       <option value="score">Sort: Score ↓</option>
@@ -105,7 +105,7 @@
   <div class="grid" id="grid"></div>
 
   <script>
-    const JOBS = [{"title": "Applied Scientist, Core Search", "url": "https://www.amazon.jobs/en/jobs/10452322/applied-scientist-core-search", "company": "Amazon", "location": "Seattle, Washington, USA", "score": 75, "overlap": 0}];
+    const JOBS = [];
 
     function scoreColor(s) {
       if (s >= 95) return '#22c55e';
